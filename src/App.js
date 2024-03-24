@@ -3,6 +3,11 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from './components/home/home_page';
 import { NavBar } from './components/resuable/nav';
+import { AboutUsPage } from './components/about/aboutus_page';
+import { Donate } from './components/donate/donate';
+import { HerosPage } from './components/heros/HerosPage';
+import { GalleryPage } from './components/gallery/galler_page';
+import { ContactUsPage } from './components/contact/contactus_page';
 
 
 function App() {
@@ -12,12 +17,12 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        {/* <Route path='/store/:LinkCategory?' element={<Store storeData={storeData} setStoreData={setStoreData} setCartActive={setCartActive} fetchStoreData={fetchStoreData} cartCount={cartCount} fetchCartCount={fetchCartCount} />} />
-          <Route path='/product/:category/:id' element={<ProductPage products={storeData?.products} setData={setStoreData} setCartActive={setCartActive} fetchStoreData={fetchStoreData} cartCount={cartCount} fetchCartCount={fetchCartCount} />} />
-          <Route path='/checkout' element={<Checkout products={storeData?.products} fetchStoreData={fetchStoreData} />} />
-          <Route path='/booking' element={<Booking />} /> */}
-        {/* <Route path='/about' element={<About />} /> */}
-        {/* <Route path='/programs' element={<Programs />} />  */}
+        <Route path='/about' element={<AboutUsPage />} />
+        <Route path='/heros' element={<HerosPage />} />
+        <Route path='/gallery' element={<GalleryPage />} />
+        <Route path='/contact' element={<ContactUsPage />} />
+        <Route path='/donate' element={<Donate />} />
+
       </Routes>
     </BrowserRouter>
   );
