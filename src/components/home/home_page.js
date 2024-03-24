@@ -68,7 +68,6 @@ export const HomePage = () => {
                             <li>Patna – 800 001</li>
                         </ul>
                     </div>
-
                 </Row>
 
 
