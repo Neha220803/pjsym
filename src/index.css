@@ -11,3 +11,112 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('D:\Neha\React\pjsym\src\components\images\girlbg.png');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+}
+
+section {
+  height: 100vh;
+
+}
+
+.heading1 {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.overlap-group {
+  position: relative;
+
+}
+
+.wave-left1 {
+  position: absolute;
+  height: 500px;
+  width: auto;
+
+}
+
+.wave-left2 {
+  position: absolute;
+  height: 536px;
+  width: auto;
+  top: 160px;
+  right: 0px;
+}
+
+
+footer {
+  background-color: #124076;
+  color: white;
+  font-size: 22px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+
+.footer-nav {
+  list-style-type: none;
+  /* float: right; */
+}
+
+.social-links {
+  list-style-type: none;
+}
+
+
+.social-links li {
+
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: underline;
+  text-decoration-color: #FFC374;
+  border: 0;
+  color: white;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+  font-size: 100%;
+}
+
+.footer-nav li a:hover,
+.social-links li a:hover {
+  color: #ddd;
+  text-decoration: none;
+}
+
+
+.fb:hover {
+  color: #3b5998;
+}
+
+.gl:hover {
+  color: #dd4b39;
+}
+
+.tw:hover {
+  color: #00aced;
+}
+
+.ig:hover {
+  color: rgb(207, 28, 183);
+}
