@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../index.css';
-import { Button, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import topleft1 from '../images/topleft1.png'
 import botright1 from '../images/botright1.png'
 

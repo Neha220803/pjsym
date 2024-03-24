@@ -120,3 +120,32 @@ footer {
 .ig:hover {
   color: rgb(207, 28, 183);
 }
+
+.modal-90w {
+  max-width: 70vw !important;
+}
+
+.custom-modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.blue-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #124076;
+  flex: 1;
+  padding: 20px;
+  color: white;
+  font-size: large;
+  border-radius: 10px;
+}
+
+
+
+.form-section {
+  flex: 1;
+  padding: 20px;
+}

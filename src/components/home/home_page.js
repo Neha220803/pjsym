@@ -2,7 +2,7 @@ import React from 'react'
 import CarouselHeader from './carousel'
 import '../../index.css';
 
-import { Button, Container, Col, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { ProvidenceMssg } from './ProvidenceMssg';
 import { MissionVission } from './MissionVission';
 import { FaFacebook, FaTwitter, FaGoogle, FaInstagram } from 'react-icons/fa';
@@ -21,7 +21,6 @@ export const HomePage = () => {
                         <Button className='me-5' variant='outline-primary'>Read More</Button>
                         <Button className='px-4' variant='primary'>Donate</Button>
                     </div>
-
                 </div>
             </header>
             <ProvidenceMssg />
