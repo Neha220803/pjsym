@@ -19,7 +19,7 @@ export const HomePage = () => {
                     </h1>
                     <div className='mt-5'>
                         <Button className='me-5' variant='outline-primary'>Read More</Button>
-                        <Button variant='primary'>Read More</Button>
+                        <Button className='px-4' variant='primary'>Donate</Button>
                     </div>
 
                 </div>
