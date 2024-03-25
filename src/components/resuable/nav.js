@@ -31,6 +31,7 @@ export const NavBar = () => {
                     <Nav>
                         <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
                         <Nav.Link href="/about" style={{ color: 'white' }}>About Us</Nav.Link>
+                        <Nav.Link href="/programs" style={{ color: 'white' }}>Programs</Nav.Link>
                         <Nav.Link href="/heros" style={{ color: 'white' }}>Heroes</Nav.Link>
                         <Nav.Link href="/gallery" style={{ color: 'white' }}>Gallery</Nav.Link>
                         <Nav.Link href="#!" onClick={() => setLgShow(true)} style={{ color: 'white' }}>Contact Us</Nav.Link>

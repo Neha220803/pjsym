@@ -1,21 +1,61 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import herosbg from '../images/herosimg.png'
 import '../../index.css';
+import { Footer } from '../resuable/footer';
+
+const cardData = [
+    {
+        title: "Card 1",
+        text: "With supporting text below as a natural lead-in to additional content.",
+        buttonText: "Read More...",
+    },
+    {
+        title: "Card 1",
+        text: "With supporting text below as a natural lead-in to additional content.",
+        buttonText: "Read More...",
+    },
+    {
+        title: "Card 1",
+        text: "With supporting text below as a natural lead-in to additional content.",
+        buttonText: "Read More...",
+    },
+    {
+        title: "Card 1",
+        text: "With supporting text below as a natural lead-in to additional content.",
+        buttonText: "Read More...",
+    },
+
+];
 
 export const HerosPage = () => {
     return (
         <div>
 
-            <section style={{ minHeight: '100vh' }}>
-                <Container className="d-flex justify-content-center align-items-center">
-                    <Row>
-                        <Col>
-                            <h1>About Us Page</h1>
-                            <h1>Heros Page</h1>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
+            <Container fluid className="mb-4 d-flex justify-content-center">
+                <Row>
+                    <Col>
+                        <img alt="mission img" src={herosbg} className="img-fluid w-100" />
+                    </Col>
+                </Row>
+            </Container>
+            <Container>
+                <div>
+                    {cardData.map((card, index) => (
+                        <Card key={index} className="mb-3">
+                            <Card.Body>
+                                <Card.Title>{card.title}</Card.Title>
+                                <Card.Text>{card.text}</Card.Text>
+                                <Button variant="primary">{card.buttonText}</Button>
+                            </Card.Body>
+                        </Card>
+                    ))}
+                </div>
+            </Container>
+            <Footer />
+
+
+
         </div>
     )
 }
