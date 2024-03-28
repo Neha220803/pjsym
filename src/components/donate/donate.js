@@ -10,7 +10,6 @@ export const Donate = () => {
     return (
         <div>
             <img alt="mission img" src={donatebg} className="img-fluid w-100" />
-
             <section>
                 <Container>
                     <Row>
