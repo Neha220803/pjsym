@@ -31,14 +31,7 @@ const cardData = [
 export const HerosPage = () => {
     return (
         <div>
-
-            <Container fluid className="mb-4 d-flex justify-content-center">
-                <Row>
-                    <Col>
-                        <img alt="mission img" src={herosbg} className="img-fluid w-100" />
-                    </Col>
-                </Row>
-            </Container>
+            <img alt="mission img" src={herosbg} className="img-fluid w-100" />
             <Container>
                 <div>
                     {cardData.map((card, index) => (

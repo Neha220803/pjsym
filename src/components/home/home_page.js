@@ -10,7 +10,7 @@ import { Footer } from '../resuable/footer';
 export const HomePage = () => {
     return (
         <div>
-            <header>
+            {/* <header>
                 <div className="heading1">
                     <h1>Thank You for
                         <br></br>
@@ -21,9 +21,11 @@ export const HomePage = () => {
                         <Button className='px-4' variant='primary'>Donate</Button>
                     </div>
                 </div>
-            </header>
+            </header> */}
+            <CarouselHeader />
             <ProvidenceMssg />
             <MissionVission />
+
             <Footer />
 
 

@@ -28,14 +28,7 @@ const images = [
 export const GalleryPage = () => {
     return (
         <div>
-
-            <Container fluid className=" d-flex justify-content-center">
-                <Row>
-                    <Col>
-                        <img alt="mission img" src={gallerybg} className="img-fluid w-100" />
-                    </Col>
-                </Row>
-            </Container>
+            <img alt="mission img" src={gallerybg} className="img-fluid w-100" />
             <Container>
                 {Array.from({ length: 5 }).map((_, rowIndex) => (
                     <Row key={rowIndex} className="mb-3">

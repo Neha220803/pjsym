@@ -9,14 +9,8 @@ import { Footer } from '../resuable/footer';
 export const Donate = () => {
     return (
         <div>
+            <img alt="mission img" src={donatebg} className="img-fluid w-100" />
 
-            <Container fluid className="d-flex justify-content-center">
-                <Row>
-                    <Col>
-                        <img alt="mission img" src={donatebg} className="img-fluid w-100" />
-                    </Col>
-                </Row>
-            </Container>
             <section>
                 <Container>
                     <Row>

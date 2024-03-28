@@ -11,13 +11,7 @@ import { Footer } from '../resuable/footer';
 export const AboutUsPage = () => {
     return (
         <div>
-            <Container fluid className="d-flex justify-content-center">
-                <Row>
-                    <Col>
-                        <img alt="mission img" src={aboutbg} className="img-fluid w-100" />
-                    </Col>
-                </Row>
-            </Container>
+            <img alt="mission img" src={aboutbg} className="img-fluid w-100" />
             <section>
                 <Container>
                     <Row>

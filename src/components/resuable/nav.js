@@ -14,9 +14,9 @@ export const NavBar = () => {
     const handleClose = () => setLgShow(false);
 
     return (
-        <Navbar className="bg-dark fixed-top" expand="lg">
+        <Navbar className="navcont fixed-top" expand="lg">
             <Container>
-                <Navbar.Brand href="/" style={{ color: 'white' }}>
+                <Navbar.Brand href="/">
                     <img
                         alt=""
                         src={logo}
@@ -28,13 +28,13 @@ export const NavBar = () => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-                    <Nav>
-                        <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
-                        <Nav.Link href="/about" style={{ color: 'white' }}>About Us</Nav.Link>
-                        <Nav.Link href="/programs" style={{ color: 'white' }}>Programs</Nav.Link>
-                        <Nav.Link href="/heros" style={{ color: 'white' }}>Heroes</Nav.Link>
-                        <Nav.Link href="/gallery" style={{ color: 'white' }}>Gallery</Nav.Link>
-                        <Nav.Link href="#!" onClick={() => setLgShow(true)} style={{ color: 'white' }}>Contact Us</Nav.Link>
+                    <Nav className='textcol'>
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/about">About Us</Nav.Link>
+                        <Nav.Link href="/programs" >Programs</Nav.Link>
+                        <Nav.Link href="/heros">Heroes</Nav.Link>
+                        <Nav.Link href="/gallery" >Gallery</Nav.Link>
+                        <Nav.Link href="#!" onClick={() => setLgShow(true)}>Contact Us</Nav.Link>
                     </Nav>
                     <Button href='/donate' variant="outline-primary">Donate</Button>
                 </Navbar.Collapse>
