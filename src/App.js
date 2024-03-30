@@ -20,7 +20,6 @@ function App() {
         <Route path='/heros' element={<HerosPage />} />
         <Route path='/gallery' element={<GalleryPage />} />
         <Route path='/donate' element={<Donate />} />
-
       </Routes>
     </BrowserRouter>
   );
