@@ -28,19 +28,18 @@ export const NavBar = () => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-                    <Nav className='textcol'>
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/about">About Us</Nav.Link>
-                        <Nav.Link href="/programs" >Programs</Nav.Link>
-                        <Nav.Link href="/heros">Heroes</Nav.Link>
-                        <Nav.Link href="/gallery" >Gallery</Nav.Link>
-                        <Nav.Link href="#!" onClick={() => setLgShow(true)}>Contact Us</Nav.Link>
+                    <Nav>
+                        <Nav.Link href="/" className='navpaths'>Home</Nav.Link>
+                        <Nav.Link href="/about" className='navpaths'>About Us</Nav.Link>
+                        <Nav.Link href="/programs" className='navpaths'>Programs</Nav.Link>
+                        <Nav.Link href="/heros" className='navpaths'>Heroes</Nav.Link>
+                        <Nav.Link href="/gallery" className='navpaths'>Gallery</Nav.Link>
+                        <Nav.Link href="#!" className='navpaths' onClick={() => setLgShow(true)}>Contact Us</Nav.Link>
                     </Nav>
                     <Button href='/donate' variant="outline-primary">Donate</Button>
                 </Navbar.Collapse>
             </Container>
 
-            {/* Contact Us Modal */}
             <Modal
                 show={lgShow}
                 dialogClassName="modal-90w"

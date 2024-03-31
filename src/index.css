@@ -44,10 +44,11 @@ section {
 .navcont {
   background-color: rgba(255, 255, 255, 0.289);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  color: black;
 }
 
-.textcol {
-  color: black;
+.navpaths:hover {
+  border-bottom: 2px solid black !important;
 }
 
 .heading1 {
