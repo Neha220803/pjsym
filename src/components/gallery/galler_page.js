@@ -85,8 +85,12 @@ export const GalleryPage = () => {
     const totalRows = Math.ceil(totalImages / imagesPerPage);
     return (
         <div>
-            <img alt="mission img" src={gallerybg} className="img-fluid w-100 mb-4" />
+            <img alt="mission img" src={gallerybg} className="img-fluid w-100" />
             <Container>
+                <Row>
+                    <div className='each-head d-flex justify-content-center my-4'>Gallery</div>
+
+                </Row>
                 {Array.from({ length: totalRows }).map((_, rowIndex) => (
                     <Row key={rowIndex} className="mb-3">
                         {Array.from({ length: imagesPerPage }).map((_, colIndex) => {
@@ -102,7 +106,7 @@ export const GalleryPage = () => {
                                     </Col>
                                 );
                             } else {
-                                return null; 
+                                return null;
                             }
                         })}
                     </Row>

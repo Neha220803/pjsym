@@ -33,31 +33,28 @@ const programData = [
 export const ProgamsPage = () => {
     return (
         <div>
-            <Container fluid className="mb-5 d-flex justify-content-center">
+            <img alt="mission img" src={progbg} className="img-fluid w-100" />
+            <Row>
+                <div className='each-head d-flex justify-content-center my-4'>Programs</div>
+            </Row>
+
+            <Container className="d-flex justify-content-center">
                 <Row>
-                    <Col>
-                        <img alt="mission img" src={progbg} className="img-fluid w-100" />
-                    </Col>
+                    {programData.map((program, index) => (
+                        <Col key={index} xs={12} sm={6} md={4} className="mb-4">
+                            <Card style={{ width: '100%' }}>
+                                <Card.Img variant="top" src={progbg} />
+                                <Card.Body>
+                                    <Card.Title>{program.title}</Card.Title>
+                                    <Card.Text>{program.text}</Card.Text>
+                                    <Button variant="primary">Read More</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
                 </Row>
-            </Container >
-            <section>
-                <Container className="d-flex justify-content-center">
-                    <Row>
-                        {programData.map((program, index) => (
-                            <Col key={index} xs={12} sm={6} md={4} className="mb-4">
-                                <Card style={{ width: '100%' }}>
-                                    <Card.Img variant="top" src={progbg} />
-                                    <Card.Body>
-                                        <Card.Title>{program.title}</Card.Title>
-                                        <Card.Text>{program.text}</Card.Text>
-                                        <Button variant="primary">Go somewhere</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        ))}
-                    </Row>
-                </Container>
-            </section>
+            </Container>
+
             <Footer />
         </div>
     )

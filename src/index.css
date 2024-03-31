@@ -21,6 +21,14 @@ header {
   background-attachment: fixed;
 }
 
+.each-head {
+  color: #124076;
+  font-size: 56.56px;
+  font-family: Inknut Antiqua;
+  font-weight: 700;
+  word-wrap: break-word
+}
+
 .image-container {
   position: relative;
 }

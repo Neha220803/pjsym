@@ -34,6 +34,10 @@ export const HerosPage = () => {
             <img alt="mission img" src={herosbg} className="img-fluid w-100" />
             <Container>
                 <div>
+                    <Row>
+                        <div className='each-head d-flex justify-content-center my-4'>Heros Stories</div>
+
+                    </Row>
                     {cardData.map((card, index) => (
                         <Card key={index} className="mb-3">
                             <Card.Body>

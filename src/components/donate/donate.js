@@ -13,7 +13,8 @@ export const Donate = () => {
             <section>
                 <Container>
                     <Row>
-                        <div className='d-flex my-5 justify-content-start'><h1>Donate Now</h1></div>
+                        <div className='each-head my-4'>Donate Now</div>
+
                     </Row>
                     <div>
                         <Form>
