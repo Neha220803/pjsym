@@ -4,6 +4,8 @@ import progbg from '../images/progimg.png';
 import { Footer } from '../resuable/footer';
 import prog1 from '../images/Prog/magis.png';
 import { motion } from 'framer-motion';
+import prog2 from '../images/Prog/leadership.jpg';
+import prog3 from '../images/Gallery/65.jpg';
 
 const upvariants = {
     initial: {
@@ -27,13 +29,13 @@ const programData = [
         text: "To sensitize students to establish 'a hope-filled future', to orient youth towards their role in Nation Building and to motivate the students to be the change and bring difference in the society wherever one is placed."
     },
     {
-        img: prog1,
-        title: "Prog 2",
+        img: prog2,
+        title: "Leadership Training Program",
         text: "Some quick example text to build on the card title and make up the bulk of the card's content. Loreum Ipsom Idor Loreum Ipsom Idor Loreum Ipsom Idor Loreum Ipsom Idor"
     },
     {
-        img: prog1,
-        title: "Card 3",
+        img: prog3,
+        title: "Summer Skill Dev Program",
         text: "Some quick example text to build on the card title and make up the bulk of the card's content. Loreum Ipsom Idor Loreum Ipsom Idor Loreum Ipsom Idor Loreum Ipsom Idor"
     },
     {
@@ -88,8 +90,8 @@ const ProgramCard = ({ img, title, text, index }) => {
             transition={{ duration: 0.5, delay }} // Apply delay to each card
             className="mb-4"
         >
-            <Card style={{ width: '100%' }}>
-                <Card.Img variant="top" src={img} />
+            <Card style={{ width: '100%', height: '400px' }}> {/* Adjust the height as needed */}
+                <Card.Img variant="top" src={img} style={{ height: '200px', objectFit: 'cover' }} /> {/* Set image height and maintain aspect ratio */}
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{text}</Card.Text>

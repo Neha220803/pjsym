@@ -3,21 +3,35 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import donatebg from '../images/donateimg.png'
 import '../../index.css';
 import { Footer } from '../resuable/footer';
+import { motion } from 'framer-motion';
 
-
+const variants = {
+    initial: {
+        y: 300,
+        opacity: 0,
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.2,
+            staggerChildren: 0.1,
+        }
+    }
+};
 
 export const Donate = () => {
     return (
-        <div>
+        <motion.div variants={variants} initial="initial" whileInView="animate" >
             <img alt="mission img" src={donatebg} className="img-fluid w-100" />
             <section>
                 <Container>
                     <Row>
-                        <div className='each-head my-4'>Donate Now</div>
-
+                        <motion.div className='each-head my-4' variants={variants} initial="initial" animate="animate">
+                            Donate Now</motion.div>
                     </Row>
                     <div>
-                        <Form>
+                        <motion.Form variants={variants} initial="initial" whileInView="animate">
                             <Row>
                                 <Col>
                                     <Form.Group className="mb-3" controlId="formBasicAmount">
@@ -33,11 +47,7 @@ export const Donate = () => {
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Email address</Form.Label>
                                         <Form.Control type="email" placeholder="Enter email" />
-                                        {/* <Form.Text className="text-muted">
-                                            We'll never share your email with anyone else.
-                                        </Form.Text> */}
                                     </Form.Group>
-
                                     <Form.Group className="mb-3" controlId="formBasicPhone">
                                         <Form.Label>Phone Number</Form.Label>
                                         <Form.Control type="text" placeholder="Enter phone number" />
@@ -65,18 +75,15 @@ export const Donate = () => {
                                     </Form.Group>
                                 </Col>
                             </Row>
-
                             <Button className='mt-4' variant="primary" type="submit">
                                 Proceed to Payment
                             </Button>
-                        </Form>
+                        </motion.Form>
                     </div>
                 </Container>
-
             </section>
             <Footer />
-
-        </div>
+        </motion.div>
 
     )
 }

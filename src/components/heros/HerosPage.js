@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import herosbg from '../images/herosimg.png'
+import herosbg from '../images/herosimg.png';
 import '../../index.css';
 import { Footer } from '../resuable/footer';
 import hero1 from '../images/Heros/hero1.png';
@@ -18,13 +18,9 @@ const upvariants = {
         opacity: 1,
         transition: {
             duration: 0.5,
-            staggerChildren: 0.1,
         }
     }
 };
-
-
-
 
 const cardData = [
     {
@@ -52,28 +48,35 @@ const HerosPage = () => {
         <div>
             <img alt="mission img" src={herosbg} className="img-fluid w-100" />
             <Container>
-                <div>
-                    <Row>
-                        <motion.div variants={upvariants} initial="initial" whileInView="animate"
-                            className='each-head d-flex justify-content-center my-4'>Heros Stories</motion.div>
-                    </Row>
+                <Row>
+                    <motion.div variants={upvariants} initial="initial" animate="animate" className='each-head d-flex justify-content-center my-4'>Heros Stories</motion.div>
+                </Row>
+                <motion.div variants={upvariants} initial="initial" animate="animate">
                     {cardData.map((card, index) => (
-                        <Card key={index} className="mb-3">
-                            <Card.Body className="d-flex flex-row">
-                                <Card.Img src={card.img} style={{ width: '150px', height: 'auto' }} className="align-self-center me-4" />
-                                <div>
-                                    <Card.Title>{card.title}</Card.Title>
-                                    <Card.Text>{card.text}</Card.Text>
-                                    <Button variant="primary">{card.buttonText}</Button>
-                                </div>
-                            </Card.Body>
-                        </Card>
+                        <CardContainer key={index} delay={index * 0.9} card={card} />
                     ))}
-                </div>
+                </motion.div>
             </Container>
             <Footer />
         </div>
     )
+}
+
+const CardContainer = ({ card, delay }) => {
+    return (
+        <motion.div key={card.title} variants={upvariants} initial="initial" animate="animate" transition={{ duration: 0.5, delay }}>
+            <Card className="mb-3">
+                <Card.Body className="d-flex flex-row">
+                    <Card.Img src={card.img} style={{ width: '150px', height: 'auto' }} className="align-self-center me-4" />
+                    <div>
+                        <Card.Title>{card.title}</Card.Title>
+                        <Card.Text>{card.text}</Card.Text>
+                        <Button variant="primary">{card.buttonText}</Button>
+                    </div>
+                </Card.Body>
+            </Card>
+        </motion.div>
+    );
 }
 
 export default HerosPage;

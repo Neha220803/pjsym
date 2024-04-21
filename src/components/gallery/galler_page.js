@@ -1,8 +1,23 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
-import '../../index.css';
+import React, { useEffect } from 'react';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import gallerybg from '../images/galleryimg.png';
-const images = [
+import { Footer } from '../resuable/footer';
+import { motion, useAnimation } from 'framer-motion';
+
+const staggeredVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (index) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            delay: index * 20
+        }
+    })
+};
+
+
+const galleryData = [
     require('../images/Gallery/1.jpg'),
     require('../images/Gallery/2.jpg'),
     require('../images/Gallery/3.jpg'),
@@ -33,7 +48,7 @@ const images = [
     require('../images/Gallery/46.jpg'),
     require('../images/Gallery/59.jpg'),
 
-    require('../images/Gallery/67.jpg'),
+    // require('../images/Gallery/67.jpg'),
     require('../images/Gallery/68.jpg'),
     require('../images/Gallery/34.jpg'),
     require('../images/Gallery/48.jpg'),
@@ -79,39 +94,46 @@ const images = [
     require('../images/Gallery/69.jpg'),
 ];
 
-export const GalleryPage = () => {
-    const imagesPerPage = 4;
-    const totalImages = images.length;
-    const totalRows = Math.ceil(totalImages / imagesPerPage);
+const GalleryPage = () => {
+    const controls = useAnimation();
+
+    useEffect(() => {
+        controls.start('visible');
+    }, [controls]);
+
     return (
         <div>
-            <img alt="mission img" src={gallerybg} className="img-fluid w-100" />
+            <img alt="Gallery Background Image" src={gallerybg} className="w-100 vh-50" />
             <Container>
+                <motion.div initial="hidden" animate={controls} variants={staggeredVariants} className='each-head d-flex justify-content-center my-4'>Gallery</motion.div>
                 <Row>
-                    <div className='each-head d-flex justify-content-center my-4'>Gallery</div>
-
+                    {galleryData.map((image, index) => (
+                        <Col key={index} xs={12} sm={6} md={4}>
+                            <GalleryItem
+                                img={image}
+                                index={index}
+                            />
+                        </Col>
+                    ))}
                 </Row>
-                {Array.from({ length: totalRows }).map((_, rowIndex) => (
-                    <Row key={rowIndex} className="mb-3">
-                        {Array.from({ length: imagesPerPage }).map((_, colIndex) => {
-                            const imageIndex = rowIndex * imagesPerPage + colIndex;
-                            if (imageIndex < totalImages) {
-                                return (
-                                    <Col key={colIndex}>
-                                        <img
-                                            src={images[imageIndex]}
-                                            alt={`Image ${imageIndex}`}
-                                            className="img-fluid"
-                                        />
-                                    </Col>
-                                );
-                            } else {
-                                return null;
-                            }
-                        })}
-                    </Row>
-                ))}
             </Container>
+            <Footer />
         </div>
     )
-}
+};
+
+const GalleryItem = ({ img, index }) => {
+    return (
+        <motion.div
+            custom={index}
+            variants={staggeredVariants}
+            className="mb-4"
+        >
+            <Card style={{ height: "250px" }}>
+                <Card.Img variant="top" src={img} style={{ height: "100%", objectFit: "cover" }} />
+            </Card>
+        </motion.div>
+    );
+};
+
+export default GalleryPage;
