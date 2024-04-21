@@ -4,9 +4,10 @@ import { HomePage } from './components/home/home_page';
 import { NavBar } from './components/resuable/nav';
 import { AboutUsPage } from './components/about/aboutus_page';
 import { Donate } from './components/donate/donate';
-import { HerosPage } from './components/heros/HerosPage';
+
 import { GalleryPage } from './components/gallery/galler_page';
 import { ProgamsPage } from './components/programs/ProgamsPage';
+import HerosPage from './components/heros/HerosPage';
 
 
 function App() {

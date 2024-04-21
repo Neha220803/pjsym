@@ -30,11 +30,11 @@ export const Footer = () => {
                 </div>
                 <div class="col span_2_of_4">
                     <ul class="footer-nav">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Programms</a></li>
-                        <li><a href="#">Heros</a></li>
-                        <li><a href="#">Gallery</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/programs">Programms</a></li>
+                        <li><a href="/heros">Heros</a></li>
+                        <li><a href="/gallery">Gallery</a></li>
                     </ul>
                 </div>
 

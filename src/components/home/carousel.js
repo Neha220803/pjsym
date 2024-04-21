@@ -1,27 +1,28 @@
 import React from 'react';
 import { Carousel, Button } from 'react-bootstrap';
-import carousel1 from '../images/girlbg.png';
-import carousel2 from '../images/car2.png';
-import carousel3 from '../images/car3.png';
+import carousel1 from '../images/car1.png';
+import carousel2 from '../images/car2.jpg';
+import carousel3 from '../images/car3.jpg';
 import '../../index.css';
+
 
 function CarouselHeader() {
     const slides = [
         {
             image: carousel1,
-            heading: ['Thank You for giving', 'hope to Dream Big!'],
+            heading: ['SAINUMA\'s Symphony', ' From Burden to Beacon'],
             buttonText: 'Read More',
             buttonVariant: 'outline-primary'
         },
         {
             image: carousel2,
-            heading: ['Text for Slide 2'],
+            heading: ['Rising from Ashes:', 'The AVINASH MAHATO Story'],
             buttonText: 'Read More',
             buttonVariant: 'outline-primary'
         },
         {
             image: carousel3,
-            heading: ['Text for Slide 3'],
+            heading: ['LOVELY KUMARI\'s Journey:', 'From Fragility to Strength'],
             buttonText: 'Read More',
             buttonVariant: 'outline-primary'
         }
@@ -45,10 +46,9 @@ function CarouselHeader() {
                                 <h1 key={i}>{line}</h1>
                             ))}
                             <div className='mt-5'>
-                                <Button className='me-5' variant='secondary'>{slide.buttonText}</Button>
+                                <Button className='me-5' variant='outline-secondary'>{slide.buttonText}</Button>
                                 <Button className='px-4' variant='primary'>Donate</Button>
                             </div>
-                            <div>hello</div>
                         </Carousel.Caption>
                     </Carousel.Item>
                 ))}
