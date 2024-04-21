@@ -108,16 +108,10 @@ section {
 footer {
   background-color: #124076;
   color: white;
-  font-size: 22px;
-  padding-top: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
 }
 
 .footer-nav {
   list-style-type: none;
-  /* float: right; */
 }
 
 .social-links {

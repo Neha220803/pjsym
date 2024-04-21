@@ -11,11 +11,10 @@ const HistoryComp = () => {
         <VerticalTimeline lineColor={"black"}>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            // contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
+            contentArrowStyle={{ borderRight: "7px solid  #124076" }}
+            contentStyle={{ borderTop: "3px solid  #124076" }}
             date="2019"
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            iconStyle={{ background: "#124076", color: "#fff" }}
           //    icon={<WorkIcon />}
           >
             <h3 className="vertical-timeline-element-title">
@@ -28,9 +27,9 @@ const HistoryComp = () => {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="2012"
-            contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            contentStyle={{ borderTop: "3px solid   " }}
+            contentArrowStyle={{ borderRight: "7px solid  #124076" }}
+            iconStyle={{ background: "#124076", color: "#fff" }}
           //    icon={<WorkIcon />}
           >
             <h3 className="vertical-timeline-element-title">Promulgated of Vision and Mission</h3>
@@ -42,8 +41,9 @@ const HistoryComp = () => {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="2000 - 2001"
-            contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+            contentStyle={{ borderTop: "3px solid  #124076" }}
+            contentArrowStyle={{ borderRight: "7px solid  #124076" }}
+            iconStyle={{ background: "#124076", color: "#fff" }}
 
           >
             <h3 className="vertical-timeline-element-title">Creation of Vission</h3>
@@ -53,14 +53,14 @@ const HistoryComp = () => {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="1975 - 1980"
-            contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            contentStyle={{ borderTop: "3px solid  #124076" }}
+            contentArrowStyle={{ borderRight: "7px solid  #124076" }}
+            iconStyle={{ background: "#124076", color: "#fff" }}
           //    icon={<WorkIcon />}
           >
             <h3 className="vertical-timeline-element-title">Initial involvement</h3>
             <p>Involvement of Fr. George Peter SJ, Fr. Irudaya Raj SJ, and Sr. Christine HC in youth ministry.</p>
-          </VerticalTimelineElement>  
+          </VerticalTimelineElement>
         </VerticalTimeline>
       </div>
     </Container>
