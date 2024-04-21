@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import carousel1 from '../images/car1.png';
 import carousel2 from '../images/car2.jpg';
 import carousel3 from '../images/car3.jpg';
@@ -7,6 +8,7 @@ import '../../index.css';
 
 
 function CarouselHeader() {
+    const navigate = useNavigate();
     const slides = [
         {
             image: carousel1,
@@ -28,6 +30,7 @@ function CarouselHeader() {
         }
     ];
 
+
     return (
         <header>
             <Carousel interval={1500} pause={false} controls={false}>
@@ -46,8 +49,8 @@ function CarouselHeader() {
                                 <h1 key={i}>{line}</h1>
                             ))}
                             <div className='mt-5'>
-                                <Button className='me-5' variant='outline-secondary'>{slide.buttonText}</Button>
-                                <Button className='px-4' variant='primary'>Donate</Button>
+                                <Button className='me-5' variant='outline-secondary' onClick={() => navigate('/heros')}>{slide.buttonText}</Button>
+                                <Button className='px-4' variant='primary' onClick={() => navigate('/donate')}>Donate</Button>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>

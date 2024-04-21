@@ -16,7 +16,6 @@ const staggeredVariants = {
     })
 };
 
-
 const galleryData = [
     require('../images/Gallery/1.jpg'),
     require('../images/Gallery/2.jpg'),

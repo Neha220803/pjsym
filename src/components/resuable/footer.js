@@ -35,9 +35,9 @@ export const Footer = () => {
                         <li><a href="/programs">Programms</a></li>
                         <li><a href="/heros">Heros</a></li>
                         <li><a href="/gallery">Gallery</a></li>
+                        <li><a href="/donate">Donate</a></li>
                     </ul>
                 </div>
-
                 <div class="col span_2_of_4">
                     <ul class="footer-nav">
                         <li>Fr. JOYSON FERNANDES SJ</li>

@@ -4,6 +4,7 @@ import { Button, Container, Row, Col } from 'react-bootstrap';
 import missimg from '../images/mission.png'
 import visimg from '../images/vission.png'
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const upvariants = {
     initial: {
@@ -21,6 +22,7 @@ const upvariants = {
 };
 
 export const MissionVission = () => {
+    const navigate = useNavigate();
     return (
         <section style={{ backgroundColor: '#F6ECDA' }}>
             <motion.div variants={upvariants} initial="initial" whileInView="animate">
@@ -33,7 +35,7 @@ export const MissionVission = () => {
                     <Row className='mt-2'>
                         <div className='col-1'></div>
                         <div className='col-7 h5'>Lorem ipsum dolor sit amet consectetur. sit. Siamet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit... lor sit amet consectetur. sit. Si lor sit amet consectetur. sit. Silor sit amet consectetur. sit. Si Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit...Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit...Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit... velit elit...
-                            <br></br><Button variant="primary mt-2">Read More...</Button>
+                            <br></br><Button variant="primary mt-2" onClick={() => navigate('/about')}>Read More...</Button>
                         </div>
                         <div className='col-4'><img className='img-fluid' alt="mission img" src={missimg} /></div>
 
@@ -49,7 +51,8 @@ export const MissionVission = () => {
                     <Row className='mt-3'>
                         <div className='col-4'><img className='img-fluid' alt="mission img" src={visimg} /></div>
                         <div className='col-7 h5' >Lorem ipsum dolor sit amet consectetur. sit. Siamet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit... lor sit amet consectetur. sit. Si lor sit amet consectetur. sit. Silor sit amet consectetur. sit. Si Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit...Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit...Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit... velit elit...
-                            <br></br><Button variant="primary mt-2">Read More...</Button>
+                            <br></br>
+                            <Button variant="primary mt-2" onClick={() => navigate('/about')}>Read More...</Button>
                         </div>
                         <div className='col-1'></div>
                     </Row>
