@@ -14,9 +14,6 @@ export const HomePage = () => {
             <ProvidenceMssg />
             <MissionVission />
             <Footer />
-
-
-
         </div>
     )
 }

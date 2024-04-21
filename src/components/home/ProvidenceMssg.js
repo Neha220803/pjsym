@@ -43,15 +43,15 @@ export const ProvidenceMssg = () => {
             <div className='overlap-group'>
                 <Image className="wave-left1 d-none d-sm-block" alt="left1" src={topleft1} />
 
-                <Image xs={0} className="wave-left2 d-none d-sm-block" alt="right1" src={botright1} />
+                <Image className="wave-left2 d-none d-sm-block" alt="right1" src={botright1} />
             </div>
             <Container className='mt-5 mb-4' >
                 <Row className=''>
-                    <Col lg={4} md={4} sm={0} className='mt-5 mb-5 pt-5' >
+                    <Col lg={4} md={4} sm={6} className='mt-5 mb-5 pt-5' >
                         <motion.img src={director} alt="directors mssg" variants={leftVarient} initial="initial" whileInView="animate" />
                     </Col>
 
-                    <Col lg={8} md={8} sm={12}>
+                    <Col lg={8} md={8} sm={6}>
                         <motion.div className='ms-5 h5' variants={rightVarient} initial="initial" whileInView="animate" >
                             <Row>
                                 <motion.div className='each-head d-flex justify-content-center my-4' variants={rightVarient} initial="initial" whileInView="animate">Director's Message</motion.div>

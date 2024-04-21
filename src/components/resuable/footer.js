@@ -19,7 +19,7 @@ export const Footer = () => {
             </Row>
             <Row>
                 <div class="col span_2_of_4">
-                    <p>hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci ..</p>
+                    <p> hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci ..</p>
                     <ul className="social-links">
                         <li><a href="#"><FaFacebook className="fb" /></a></li>
                         <li><a href="#"><FaTwitter className="tw" /></a></li>
@@ -38,6 +38,7 @@ export const Footer = () => {
                         <li><a href="/donate">Donate</a></li>
                     </ul>
                 </div>
+
                 <div class="col span_2_of_4">
                     <ul class="footer-nav">
                         <li>Fr. JOYSON FERNANDES SJ</li>
@@ -49,9 +50,9 @@ export const Footer = () => {
                     </ul>
                 </div>
             </Row>
-            <div class="row">
+            <Row>
                 <p>Copyright &copy; 2024 pjsym All Rights Reserved.</p>
-            </div>
+            </Row>
         </footer>
     )
 }
