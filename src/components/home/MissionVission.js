@@ -34,7 +34,11 @@ export const MissionVission = () => {
                     </Row>
                     <Row className='mt-2'>
                         <div className='col-1'></div>
-                        <div className='col-7 h5'>Lorem ipsum dolor sit amet consectetur. sit. Siamet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit... lor sit amet consectetur. sit. Si lor sit amet consectetur. sit. Silor sit amet consectetur. sit. Si Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit...Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit...Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit... velit elit...
+                        <div className='col-7 h5'>To continue the mission of Jesus Christ among the youth, rooted and grounded in His love,
+                            striving to empower the youth, especially the unorganized youth, and lend support to youth movements by harnessing their
+                            potentialities. We accompany them in the process of understanding and responding to the existing realities of our land
+                            in a constructive way, igniting the fire of dynamism, creativity, and search for meaningfulness in life based on Gospel
+                            values. Our goal is to build a just, humane, and ecologically sensitive society.
                             <br></br><Button variant="primary mt-2" onClick={() => navigate('/about')}>Read More...</Button>
                         </div>
                         <div className='col-4'><img className='img-fluid' alt="mission img" src={missimg} /></div>
@@ -50,7 +54,10 @@ export const MissionVission = () => {
                     </Row>
                     <Row className='mt-3'>
                         <div className='col-4'><img className='img-fluid' alt="mission img" src={visimg} /></div>
-                        <div className='col-7 h5' >Lorem ipsum dolor sit amet consectetur. sit. Siamet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit... lor sit amet consectetur. sit. Si lor sit amet consectetur. sit. Silor sit amet consectetur. sit. Si Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit...Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit...Lorem ipsum dolor sit amet consectetur. Tellus massa cum amet nunc aliquam nisi sit. Sit morbi aliquam aliquet velit elit... velit elit...
+                        <div className='col-7 h5' >The mission of the Patna Jesuits is to empower the youth, especially the unorganized youth,
+                            by accompanying them in understanding and responding to the existing realities of our land. We strive to harness
+                            their potentialities, ignite their fire for dynamism and creativity, and guide them in living out Gospel values.
+                            Through our work, we aim to build a just, humane, and ecologically sensitive society.
                             <br></br>
                             <Button variant="primary mt-2" onClick={() => navigate('/about')}>Read More...</Button>
                         </div>

@@ -1,6 +1,6 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import '../../index.css';
 
 const HistoryComp = () => {
@@ -14,116 +14,53 @@ const HistoryComp = () => {
             // contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
             contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
-            date="2011 - present"
+            date="2019"
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           //    icon={<WorkIcon />}
           >
             <h3 className="vertical-timeline-element-title">
-              Creative Director
+              Full-time Vocation Promoter Fr. Anthony Prakash SJ
             </h3>
-            <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
             <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
+              Inherits responsibility for Youth Apostolate.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2010 - 2011"
+            date="2012"
             contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           //    icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title">Art Director</h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              San Francisco, CA
-            </h4>
+            <h3 className="vertical-timeline-element-title">Promulgated of Vision and Mission</h3>
+
             <p>
-              Creative Direction, User Experience, Visual Design, SEO, Online
-              Marketing
+              Patna Jesuit Youth Ministry officially promulgated
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2008 - 2010"
+            date="2000 - 2001"
+            contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
+            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+
+          >
+            <h3 className="vertical-timeline-element-title">Creation of Vission</h3>
+            <p>Province Vision formulated to build human communities based on the
+              Gospel values of freedom</p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            date="1975 - 1980"
             contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           //    icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title">Web Designer</h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              Los Angeles, CA
-            </h4>
-            <p>User Experience, Visual Design</p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="2006 - 2008"
-            contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          //    icon={<WorkIcon />}
-          >
-            <h3 className="vertical-timeline-element-title">Web Designer</h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              San Francisco, CA
-            </h4>
-            <p>User Experience, Visual Design</p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--education"
-            date="April 2013"
-            contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          //    icon={<SchoolIcon />}
-          >
-            <h3 className="vertical-timeline-element-title">
-              Content Marketing for Web, Mobile and Social Media
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              Online Course
-            </h4>
-            <p>Strategy, Social Media</p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--education"
-            date="November 2012"
-            contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          //    icon={<SchoolIcon />}
-          >
-            <h3 className="vertical-timeline-element-title">
-              Agile Development Scrum Master
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              Certification
-            </h4>
-            <p>Creative Direction, User Experience, Visual Design</p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="2002 - 2006"
-            contentStyle={{ borderTop: "3px solid  rgb(33, 150, 243)" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          //    icon={<SchoolIcon />}
-          >
-            <h3 className="vertical-timeline-element-title">
-              Bachelor of Science in Interactive Digital Media Visual Imaging
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              Bachelor Degree
-            </h4>
-            <p>Creative Direction, Visual Design</p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          //    icon={<StarIcon />}
-          />
+            <h3 className="vertical-timeline-element-title">Initial involvement</h3>
+            <p>Involvement of Fr. George Peter SJ, Fr. Irudaya Raj SJ, and Sr. Christine HC in youth ministry.</p>
+          </VerticalTimelineElement>  
         </VerticalTimeline>
       </div>
     </Container>
