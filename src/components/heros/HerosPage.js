@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Card, Button } from 'react-bootstrap';
+import { Container, Row, Button } from 'react-bootstrap';
 import herosbg from '../images/herosimg.png';
 import { motion } from 'framer-motion';
 import Accordion from 'react-bootstrap/Accordion';
@@ -91,7 +91,7 @@ const CardContainer = ({ imgSrc, title, text, buttonText }) => {
         <motion.div variants={upvariants} initial="initial" animate="animate" transition={{ duration: 0.5 }}>
             <Accordion>
                 <Accordion.Item className='mb-4'>
-                    <Accordion.Header style={{ cursor: 'default' }}>
+                    <Accordion.Header style={{cursor:'default'}}>
                         <div>
                             <img src={imgSrc} style={{ width: '150px', height: 'auto' }} className="align-self-center me-4" alt="Hero" />
                         </div>
