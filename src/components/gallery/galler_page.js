@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import '../../index.css';
-import gallerybg from '../images/Gallery/72.jpg';
+import gallerybg from '../images/galleryimg.png';
 const images = [
     require('../images/Gallery/1.jpg'),
     require('../images/Gallery/2.jpg'),

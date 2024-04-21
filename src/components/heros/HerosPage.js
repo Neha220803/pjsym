@@ -6,6 +6,23 @@ import { Footer } from '../resuable/footer';
 import hero1 from '../images/Heros/hero1.png';
 import hero2 from '../images/Heros/hero2.png';
 import hero3 from '../images/Heros/hero3.png';
+import { motion } from 'framer-motion';
+
+const upvariants = {
+    initial: {
+        y: 100,
+        opacity: 0,
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.5,
+            staggerChildren: 0.1,
+        }
+    }
+};
+
 
 
 
@@ -37,7 +54,8 @@ const HerosPage = () => {
             <Container>
                 <div>
                     <Row>
-                        <div className='each-head d-flex justify-content-center my-4'>Heros Stories</div>
+                        <motion.div variants={upvariants} initial="initial" whileInView="animate"
+                            className='each-head d-flex justify-content-center my-4'>Heros Stories</motion.div>
                     </Row>
                     {cardData.map((card, index) => (
                         <Card key={index} className="mb-3">
