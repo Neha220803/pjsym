@@ -137,10 +137,10 @@ export const NavBar = () => {
                                 />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                                <Form.Label>mail id</Form.Label>
+                                <Form.Label>Eail id</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Your Email Id"
+                                    placeholder="Enter your email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
