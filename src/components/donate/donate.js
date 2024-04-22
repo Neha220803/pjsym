@@ -59,7 +59,7 @@ export const Donate = () => {
         <img alt="mission img" src={donatebg} className="img-fluid w-100" />
         <Container>
             <Row>
-                <motion.div className='each-head my-4' variants={variants} initial="initial" animate="animate">
+                <motion.div className='each-head my-4' variants={leftVarient} initial="initial" animate="animate">
                     Donate Now
                 </motion.div>
             </Row>

@@ -18,7 +18,7 @@ const HistoryComp = () => {
           //    icon={<WorkIcon />}
           >
             <h3 className="vertical-timeline-element-title">
-              Full-time Vocation Promoter Fr. Anthony Prakash SJ
+              Full-time Vocation Promoter<br></br> Fr. Anthony Prakash SJ
             </h3>
             <p>
               Inherits responsibility for Youth Apostolate.
