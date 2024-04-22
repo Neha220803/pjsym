@@ -9,9 +9,38 @@ import '../../index.css';
 
 export const NavBar = () => {
     const [lgShow, setLgShow] = useState(false); // State for modal visibility
+    const [name, setName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [message, setMessage] = useState('');
+    const [status, setStatus] = useState('');
 
     // Function to close the modal
-    const handleClose = () => setLgShow(false);
+    const handleClose = async () => {
+        setLgShow(false);
+
+        try {
+            const response = await fetch("http://localhost:5000/!", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: name,
+                    phoneNumber: phoneNumber,
+                    message: message
+                })
+            });
+
+            if (response.ok) {
+                setStatus("Message sent successfully!");
+            } else {
+                setStatus("Failed to send message. Please try again later.");
+            }
+        } catch (error) {
+            console.error("Error sending message:", error);
+            setStatus("Failed to send message. Please try again later.");
+        }
+    };
 
     return (
         <Navbar className="navcont fixed-top" expand="lg">
@@ -39,10 +68,11 @@ export const NavBar = () => {
                     <Button href='/donate' variant="outline-primary">Donate</Button>
                 </Navbar.Collapse>
             </Container>
+
             <Modal
                 show={lgShow}
                 dialogClassName="modal-90w"
-                onHide={handleClose}
+                onHide={() => { setLgShow(false); setStatus(''); }}
                 aria-labelledby="example-modal-sizes-title-lg"
             >
                 <Modal.Header closeButton>
@@ -65,7 +95,7 @@ export const NavBar = () => {
                         </div>
                         <div className="d-flex align-items-center mb-3">
                             <FaEnvelope className="me-2" />
-                            <span>demo@gmail.com</span>
+                            <span> pjsympatna@gmail.com</span>
                         </div>
                         <div className="d-flex align-items-center">
                             <FaMapMarkerAlt className="me-2" />
@@ -87,6 +117,8 @@ export const NavBar = () => {
                                     type="text"
                                     placeholder="Your Name"
                                     autoFocus
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
                                 />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
@@ -94,17 +126,23 @@ export const NavBar = () => {
                                 <Form.Control
                                     type="tel"
                                     placeholder="Your Phone Number"
+                                    value={phoneNumber}
+                                    onChange={(e) => setPhoneNumber(e.target.value)}
                                 />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Message</Form.Label>
-                                <Form.Control as="textarea" placeholder="Enter Your Message here..." rows={3} />
+                                <Form.Control as="textarea" placeholder="Enter Your Message here..." rows={3}
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                />
                             </Form.Group>
                         </Form>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <p>{status}</p>
+                    <Button variant="secondary" onClick={() => { handleClose(); setStatus(''); }}>
                         Close
                     </Button>
                     <Button variant="primary" onClick={handleClose}>
