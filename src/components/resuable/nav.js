@@ -8,7 +8,7 @@ import logo from '../images/logo.png';
 import '../../index.css';
 
 export const NavBar = () => {
-    const [lgShow, setLgShow] = useState(false); // State for modal visibility
+    const [lgShow, setLgShow] = useState(false); 
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [email, setEmail] = useState('');
