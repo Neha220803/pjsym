@@ -35,6 +35,10 @@ export const NavBar = () => {
 
             if (response.ok) {
                 setStatus("Message sent successfully!");
+                setName('');
+                setPhoneNumber('');
+                setEmail('');
+                setMessage('');
             } else {
                 setStatus("Failed to send message. Please try again later.");
             }
