@@ -4,22 +4,8 @@ import { motion } from 'framer-motion';
 import donatebg from '../images/donateimg.png';
 import '../../index.css';
 import { Footer } from '../resuable/footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMobileAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FaUser, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
-const blueBoxStyle = {
-    backgroundColor: '#cce6ff', // Light blue color
-    padding: '20px',
-    borderRadius: '5px',
-};
-
-const boldTextStyle = {
-    fontWeight: 'bold',
-};
-
-const iconStyle = {
-    marginRight: '5px',
-};
 
 const variants = {
     initial: {
@@ -36,40 +22,89 @@ const variants = {
     }
 };
 
-export const Donate = () => {
-    return (
-        <motion.div variants={variants} initial="initial" whileInView="animate" >
-            <img alt="mission img" src={donatebg} className="img-fluid w-100" />
-            <Container>
-                <Row>
-                    <motion.div className='each-head my-4' variants={variants} initial="initial" animate="animate">
-                        Donate Now
-                    </motion.div>
-                </Row>
-                <Row>
-                    <Col md={6} lg={6}>
-                        <div style={blueBoxStyle}>
-                            <p style={boldTextStyle}>Patna Jesuits continue the mission of Jesus through the service of faith and promotion of justice in the state of Bihar, one of the most backward states in India in terms of economy, education and health care...</p>
-                            <p style={boldTextStyle}>We are involved in building human communities based on values of freedom, fellowship and justice.</p>
-                            <p style={boldTextStyle}>Come… Join us in the venture… let us work together to improve the lives of the neglected, the oppressed, the deprived, the most needy people of Bihar.</p>
-                            <p style={boldTextStyle}>Contact Us to Donate</p>
-                            <p style={boldTextStyle}>Fr. Joseph Sebastian</p>
-                            <p style={boldTextStyle}>Province Development Director</p>
-                            <p style={boldTextStyle}>Provincial Residence, St. Xavier’s, West Gandhi Maidan,</p>
-                            <p style={boldTextStyle}>Patna – 800 001</p>
-                            <p style={boldTextStyle}><FontAwesomeIcon icon={faMobileAlt} style={iconStyle} /> Phone – +91 (0612) 221-9677</p>
-                            <p style={boldTextStyle}><FontAwesomeIcon icon={faEnvelope} style={iconStyle} /> Email – pddpjs@gmail.com</p>
-                        </div>
-                    </Col>
-                    <Col md={6} lg={6}>
-                        <Form >
 
+const leftVarient = {
+    initial: {
+        x: -500,
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            staggerChildren: 0.1
+        }
+    }
+}
+
+const rightVarient = {
+    initial: {
+        x: 500,
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            staggerChildren: 0.2
+        }
+    }
+
+};
+
+export const Donate = () => {
+    return (<div>
+        <img alt="mission img" src={donatebg} className="img-fluid w-100" />
+        <Container>
+            <Row>
+                <motion.div className='each-head my-4' variants={variants} initial="initial" animate="animate">
+                    Donate Now
+                </motion.div>
+            </Row>
+            <Row>
+
+                <Col md={6} lg={6} >
+                    <motion.div variants={leftVarient} initial="initial" whileInView="animate">
+                        <div className='green-box h5 p-5'>
+                            <p >Patna Jesuits continue the mission of Jesus through the service of faith and promotion of justice in the state of Bihar, one of the most backward states in India in terms of economy, education and health care...</p>
+                            <br></br>
+                            <p >We are involved in building human communities based on values of freedom, fellowship and justice.</p>
+                            <br></br>
+                            <p>Join us in the venture… let us work together to improve the lives of the neglected, the oppressed, the deprived, the most needy people of Bihar.</p>
+                            <br></br>
+                            <p>Contact Us to Donate</p>
+                            <div className="d-flex align-items-center mb-3">
+                                <FaUser className="me-2" />
+                                <span>Fr. Joseph Sebastian<br></br><h6>(Province Development Director)</h6></span>
+                            </div>
+                            <div className="d-flex align-items-center mb-3">
+                                <FaPhone className="me-2" />
+                                <span>+91 9871528965 <br></br>+91 9939447576</span>
+                            </div>
+                            <div className="d-flex align-items-center">
+                                <FaMapMarkerAlt className="me-2" />
+                                <span>
+                                    St. Xavier’s,
+                                    <br />
+                                    West Gandhi Maidan,
+                                    <br />
+                                    Patna – 800 001
+                                </span>
+                            </div>
+                        </div>
+                    </motion.div>
+                </Col>
+                <Col md={6} lg={6}>
+                    <motion.div variants={rightVarient} initial="initial" whileInView="animate">
+                        <Form className='h5 blue-text'>
                             <Form.Group className="mb-3" controlId="formBasicname">
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control type="text" placeholder="Enter your name" />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label>Email address</Form.Label>
+                                <Form.Label>Email Address</Form.Label>
                                 <Form.Control type="email" placeholder="Enter your email" />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPhone">
@@ -98,11 +133,12 @@ export const Donate = () => {
                                 Proceed to Payment
                             </Button>
                         </Form>
-                    </Col>
-                </Row>
-            </Container>
+                    </motion.div>
+                </Col>
+            </Row>
+        </Container>
+        <Footer />
+    </div>
 
-            <Footer />
-        </motion.div>
     )
 }
