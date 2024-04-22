@@ -49,7 +49,7 @@ export const MissionVission = () => {
                     <Row className='justify-content-end'>
                         <Col lg={4}>
                         </Col>
-                        <Col lg={8}> <div className='each-head2'>Vission</div>
+                        <Col lg={8}> <div className='each-head2'>Vision</div>
                         </Col>
                     </Row>
                     <Row className='mt-3'>

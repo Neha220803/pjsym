@@ -26,7 +26,7 @@ const FullMissVissPage = () => {
                 <motion.div variants={upvariants} initial="initial" whileInView="animate">
                     <Container className='d-flex justify-content-center align-items-center'>
                         <Row className='mt-5'>
-                            <h1>Mission and Vission</h1>
+                            <h1>Mission and Vision</h1>
                         </Row>
                     </Container>
                     <Container className='d-flex justify-content-center align-items-center'>
