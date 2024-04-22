@@ -19,7 +19,7 @@ export const Footer = () => {
                     </Col>
                 </Row>
                 <Row className='mt-2'>
-                    <Col lg={5}>
+                    <Col lg={5} sm={12}>
                         <div>
                             <p>The Patna Youth Society, established in 1975, is dedicated to empowering and supporting the youth of Bihar and Uttar Pradesh.
                                 Through programs and initiatives focused on personal growth and community engagement,
@@ -33,7 +33,7 @@ export const Footer = () => {
                         </div>
                     </Col>
 
-                    <Col lg={3}>
+                    <Col lg={3} className='d-none d-sm-block'>
                         <div className='d-flex align-items-center justify-content-center'>
                             <ul class="footer-nav">
                                 <li><a href="/">Home</a></li>
@@ -46,7 +46,7 @@ export const Footer = () => {
                         </div>
 
                     </Col>
-                    <Col lg={4}>
+                    <Col lg={4} sm={12}>
                         <div>
                             <ul class="footer-nav">
                                 <li><Person />Fr. JOYSON FERNANDES SJ</li>
@@ -59,7 +59,6 @@ export const Footer = () => {
                             </ul>
                         </div>
                     </Col>
-
                 </Row>
                 <Row>
                     <p>Copyright &copy; 2024 pjsym All Rights Reserved.</p>

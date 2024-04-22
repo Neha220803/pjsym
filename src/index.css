@@ -85,6 +85,14 @@ section {
   color: white;
 }
 
+@media (min-width: 576px) {
+
+  /* Adjust as needed for your mobile screen size */
+  .heading1 {
+    color: white;
+  }
+}
+
 .overlap-group {
   position: relative;
 

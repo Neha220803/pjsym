@@ -1,5 +1,3 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 import aboutbg from '../images/aboutimg.png';
 import '../../index.css';
 import { Footer } from '../resuable/footer';
