@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, Container, Nav, Button, Modal, Form } from 'react-bootstrap';
+import { Navbar, Container, Nav, Button, Modal, Form, Toast } from 'react-bootstrap';
 import { FaEnvelope } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
@@ -8,12 +8,14 @@ import logo from '../images/logo.png';
 import '../../index.css';
 
 export const NavBar = () => {
-    const [lgShow, setLgShow] = useState(false); 
+    const [lgShow, setLgShow] = useState(false);
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [status, setStatus] = useState('');
+    const [showToast, setShowToast] = useState(false);
+    const [toastVariant, setToastVariant] = useState('success');
 
     // Function to close the modal
     const handleClose = async () => {
@@ -34,19 +36,27 @@ export const NavBar = () => {
             });
 
             if (response.ok) {
-                setStatus("Message sent successfully!");
+                setStatus("Message sent successfully!\nYou will be contacted soon...");
                 setName('');
                 setPhoneNumber('');
                 setEmail('');
                 setMessage('');
+                toggleToast('success');
             } else {
-                setStatus("Failed to send message. Please try again later.");
+                setStatus("Failed to send your message!\nCheck your internet connection\nor try again later.");
+                toggleToast('danger');
             }
         } catch (error) {
             console.error("Error sending message:", error);
-            setStatus("Failed to send message. Please try again later.");
+            setStatus("Failed to send your message!\nCheck your internet connection and try again later.");
+            toggleToast('danger');
         }
     };
+    const toggleToast = (variant) => {
+        setShowToast(true);
+        setToastVariant(variant);
+    };
+
 
     return (
         <Navbar className="navcont fixed-top" expand="lg">
@@ -166,6 +176,20 @@ export const NavBar = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <Toast show={showToast} onClose={() => setShowToast(false)} style={{ position: 'absolute', top: 20, right: 20 }}>
+                <Toast.Header closeButton={true} className={`bg-${toastVariant} text-white`}>
+                    <img
+                        src={logo}
+                        className="rounded me-2"
+                        alt=""
+                        style={{ 'width': 30 }}
+                    />
+                    <strong className="me-auto"> PJSYM
+                        {/* {toastVariant === 'success' ? 'Success' : 'Error'} */}
+                    </strong>
+                </Toast.Header>
+                <Toast.Body>{status.split('\n').map((line, index) => <div key={index}>{line}</div>)}</Toast.Body>
+            </Toast>
         </Navbar>
     );
 };
