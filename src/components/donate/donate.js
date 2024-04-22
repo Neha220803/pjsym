@@ -4,6 +4,22 @@ import { motion } from 'framer-motion';
 import donatebg from '../images/donateimg.png';
 import '../../index.css';
 import { Footer } from '../resuable/footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMobileAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+const blueBoxStyle = {
+    backgroundColor: '#cce6ff', // Light blue color
+    padding: '20px',
+    borderRadius: '5px',
+};
+
+const boldTextStyle = {
+    fontWeight: 'bold',
+};
+
+const iconStyle = {
+    marginRight: '5px',
+};
 
 const variants = {
     initial: {
@@ -31,20 +47,22 @@ export const Donate = () => {
                     </motion.div>
                 </Row>
                 <Row>
-                    <Col md={6} lg={6} className='h6'>
-                        <p>Patna Jesuits continue the mission of Jesus through the service of faith and promotion of justice in the state of Bihar, one of the most backward states in India in terms of economy, education and health care...</p>
-                        <p>We are involved in building human communities based on values of freedom, fellowship and justice.</p>
-                        <p>Come… Join us in the venture… let us work together to improve the lives of the neglected, the oppressed, the deprived, the most needy people of Bihar.</p>
-                        <p>Contact Us to Donate</p>
-                        <p>Fr. Joseph Sebastian</p>
-                        <p>Province Development Director</p>
-                        <p>Provincial Residence, St. Xavier’s, West Gandhi Maidan,</p>
-                        <p>Patna – 800 001</p>
-                        <p>Phone – +91 (0612) 221-9677</p>
-                        <p>Email – pddpjs@gmail.com</p>
+                    <Col md={6} lg={6}>
+                        <div style={blueBoxStyle}>
+                            <p style={boldTextStyle}>Patna Jesuits continue the mission of Jesus through the service of faith and promotion of justice in the state of Bihar, one of the most backward states in India in terms of economy, education and health care...</p>
+                            <p style={boldTextStyle}>We are involved in building human communities based on values of freedom, fellowship and justice.</p>
+                            <p style={boldTextStyle}>Come… Join us in the venture… let us work together to improve the lives of the neglected, the oppressed, the deprived, the most needy people of Bihar.</p>
+                            <p style={boldTextStyle}>Contact Us to Donate</p>
+                            <p style={boldTextStyle}>Fr. Joseph Sebastian</p>
+                            <p style={boldTextStyle}>Province Development Director</p>
+                            <p style={boldTextStyle}>Provincial Residence, St. Xavier’s, West Gandhi Maidan,</p>
+                            <p style={boldTextStyle}>Patna – 800 001</p>
+                            <p style={boldTextStyle}><FontAwesomeIcon icon={faMobileAlt} style={iconStyle} /> Phone – +91 (0612) 221-9677</p>
+                            <p style={boldTextStyle}><FontAwesomeIcon icon={faEnvelope} style={iconStyle} /> Email – pddpjs@gmail.com</p>
+                        </div>
                     </Col>
                     <Col md={6} lg={6}>
-                        <Form className='h6'>
+                        <Form >
 
                             <Form.Group className="mb-3" controlId="formBasicname">
                                 <Form.Label>Name</Form.Label>
