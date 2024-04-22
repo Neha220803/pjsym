@@ -76,7 +76,6 @@ export const Donate = () => {
                                 <Form.Label>Enter Amount</Form.Label>
                                 <Form.Control type="text" placeholder="Enter amount" />
                             </Form.Group>
-
                             <Button className='my-4' variant="primary" type="submit">
                                 Proceed to Payment
                             </Button>
