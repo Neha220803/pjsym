@@ -18,7 +18,6 @@ export const NavBar = () => {
     const handleClose = async (event) => {
         event.preventDefault();
         event.stopPropagation();
-        setFormSubmitted(true);
         const form = event.currentTarget;
 
         if (form.checkValidity() === false) {
@@ -48,34 +47,35 @@ export const NavBar = () => {
                 setEmail('');
                 setMessage('');
                 toggleToast('success');
+                setFormSubmitted(true);
+                setLgShow(false);
             } else {
                 setStatus("Failed to send your message!\nCheck your internet connection\nor try again later.");
                 toggleToast('danger');
+                setFormSubmitted(false);
             }
+
         } catch (error) {
             console.error("Error sending message:", error);
             setStatus("Failed to send your message!\nCheck your internet connection and try again later.");
             toggleToast('danger');
+            setFormSubmitted(false);
+
         }
     };
-
-
     const toggleToast = (variant) => {
         setShowToast(true);
         setToastVariant(variant);
     };
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         if (name === 'name') setName(value);
         else if (name === 'phoneNumber') setPhoneNumber(value);
         else if (name === 'email') setEmail(value);
         else if (name === 'message') setMessage(value);
-
         // Reset form validation state when user starts typing
         setFormSubmitted(false);
     };
-
     return (
         <Navbar className="navcont fixed-top" expand="lg">
             <Container>
@@ -106,7 +106,7 @@ export const NavBar = () => {
             <Modal
                 show={lgShow}
                 dialogClassName="modal-90w"
-                onHide={() => { setLgShow(false); setStatus(''); setFormSubmitted(false); }}
+                onHide={() => { setLgShow(false); setFormSubmitted(false); }}
                 aria-labelledby="example-modal-sizes-title-lg"
             >
                 <Modal.Header closeButton>
@@ -142,9 +142,8 @@ export const NavBar = () => {
                             </span>
                         </div>
                     </div>
-
                     <div className="form-section">
-                        <Form noValidate onSubmit={handleClose} validated={formSubmitted}>
+                        <Form onSubmit={handleClose} validated={formSubmitted}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control
