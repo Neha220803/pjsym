@@ -19,12 +19,10 @@ export const NavBar = () => {
         event.preventDefault();
         event.stopPropagation();
         const form = event.currentTarget;
-
         if (form.checkValidity() === false) {
             form.classList.add('was-validated');
             return; // Exit function if form is invalid
         }
-
         try {
             // Only send the form data to the API if the form is validated
             const response = await fetch("http://localhost:5000/contact", {
@@ -39,7 +37,6 @@ export const NavBar = () => {
                     "email": email
                 })
             });
-
             if (response.ok) {
                 setStatus("Message sent successfully!\nYou will be contacted soon...");
                 setName('');
@@ -54,15 +51,28 @@ export const NavBar = () => {
                 toggleToast('danger');
                 setFormSubmitted(false);
             }
-
         } catch (error) {
             console.error("Error sending message:", error);
             setStatus("Failed to send your message!\nCheck your internet connection and try again later.");
             toggleToast('danger');
             setFormSubmitted(false);
-
         }
     };
+
+    const handleModalClose = () => {
+        if (!formSubmitted) {
+            setLgShow(false); // Close modal only if form is submitted successfully
+        }
+    };
+
+    const handleSendButtonClick = (event) => {
+        event.preventDefault(); // Prevent default form submission
+        if (!formSubmitted && name && phoneNumber && email && message) {
+            handleClose(event); // Perform submit only if form is submitted successfully and all fields are filled
+        }
+    };
+
+
     const toggleToast = (variant) => {
         setShowToast(true);
         setToastVariant(variant);
@@ -106,16 +116,17 @@ export const NavBar = () => {
             <Modal
                 show={lgShow}
                 dialogClassName="modal-90w"
-                onHide={() => { setLgShow(false); setFormSubmitted(false); }}
+                onHide={handleModalClose}
                 aria-labelledby="example-modal-sizes-title-lg"
             >
+
                 <Modal.Header closeButton>
                     <Modal.Title id="example-modal-sizes-title-lg">
                         Contact Us
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="d-flex">
-                    <div className="blue-section">
+                    <div className="blue-section d-none d-sm-block">
                         <h3 className='mb-4'>
                             CONTACT INFORMATION
                         </h3>
@@ -214,7 +225,7 @@ export const NavBar = () => {
                     <Button variant="secondary" onClick={() => { setLgShow(false); setStatus(''); setFormSubmitted(false); }}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={(event) => handleSendButtonClick(event)}>
                         Send Message
                     </Button>
                 </Modal.Footer>
