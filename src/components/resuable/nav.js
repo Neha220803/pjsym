@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar, Container, Nav, Button, Modal, Form, Toast } from 'react-bootstrap';
-import { FaEnvelope } from 'react-icons/fa';
-import { FaUser } from 'react-icons/fa';
-import { FaPhone } from 'react-icons/fa';
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaUser, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import logo from '../images/logo.png';
 import '../../index.css';
 
@@ -16,12 +13,21 @@ export const NavBar = () => {
     const [status, setStatus] = useState('');
     const [showToast, setShowToast] = useState(false);
     const [toastVariant, setToastVariant] = useState('success');
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
-    // Function to close the modal
-    const handleClose = async () => {
-        setLgShow(false);
+    const handleClose = async (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        setFormSubmitted(true);
+        const form = event.currentTarget;
+
+        if (form.checkValidity() === false) {
+            form.classList.add('was-validated');
+            return; // Exit function if form is invalid
+        }
 
         try {
+            // Only send the form data to the API if the form is validated
             const response = await fetch("http://localhost:5000/contact", {
                 method: "POST",
                 headers: {
@@ -52,11 +58,23 @@ export const NavBar = () => {
             toggleToast('danger');
         }
     };
+
+
     const toggleToast = (variant) => {
         setShowToast(true);
         setToastVariant(variant);
     };
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        if (name === 'name') setName(value);
+        else if (name === 'phoneNumber') setPhoneNumber(value);
+        else if (name === 'email') setEmail(value);
+        else if (name === 'message') setMessage(value);
+
+        // Reset form validation state when user starts typing
+        setFormSubmitted(false);
+    };
 
     return (
         <Navbar className="navcont fixed-top" expand="lg">
@@ -88,7 +106,7 @@ export const NavBar = () => {
             <Modal
                 show={lgShow}
                 dialogClassName="modal-90w"
-                onHide={() => { setLgShow(false); setStatus(''); }}
+                onHide={() => { setLgShow(false); setStatus(''); setFormSubmitted(false); }}
                 aria-labelledby="example-modal-sizes-title-lg"
             >
                 <Modal.Header closeButton>
@@ -126,49 +144,75 @@ export const NavBar = () => {
                     </div>
 
                     <div className="form-section">
-                        <Form>
+                        <Form noValidate onSubmit={handleClose} validated={formSubmitted}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Your Name"
-                                    autoFocus
+                                    name="name"
                                     value={name}
-                                    onChange={(e) => setName(e.target.value)}
+                                    onChange={handleInputChange}
+                                    required
+                                    isInvalid={formSubmitted && !name}
                                 />
+                                <Form.Control.Feedback type="invalid">
+                                    Please enter your name.
+                                </Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
                                 <Form.Label>Phone Number</Form.Label>
                                 <Form.Control
                                     type="tel"
                                     placeholder="Your Phone Number"
+                                    name="phoneNumber"
                                     value={phoneNumber}
-                                    onChange={(e) => setPhoneNumber(e.target.value)}
+                                    onChange={handleInputChange}
+                                    pattern="[0-9]{10}"
+                                    required
+                                    isInvalid={formSubmitted && !phoneNumber}
                                 />
+                                <Form.Control.Feedback type="invalid">
+                                    Please enter a valid phone number.
+                                </Form.Control.Feedback>
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                                <Form.Label>Eail id</Form.Label>
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
+                                <Form.Label>Email</Form.Label>
                                 <Form.Control
-                                    type="text"
+                                    type="email"
                                     placeholder="Enter your email"
+                                    name="email"
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={handleInputChange}
+                                    required
+                                    isInvalid={formSubmitted && !email}
                                 />
+                                <Form.Control.Feedback type="invalid">
+                                    Please enter a valid email address.
+                                </Form.Control.Feedback>
                             </Form.Group>
-
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Message</Form.Label>
-                                <Form.Control as="textarea" placeholder="Enter Your Message here..." rows={3}
+                                <Form.Control
+                                    as="textarea"
+                                    placeholder="Enter Your Message here..."
+                                    name="message"
+                                    rows={3}
                                     value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
+                                    onChange={handleInputChange}
+                                    required
+                                    isInvalid={formSubmitted && !message}
                                 />
+                                <Form.Control.Feedback type="invalid">
+                                    Please enter your message.
+                                </Form.Control.Feedback>
                             </Form.Group>
                         </Form>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
                     <p>{status}</p>
-                    <Button variant="secondary" onClick={() => { handleClose(); setStatus(''); }}>
+                    <Button variant="secondary" onClick={() => { setLgShow(false); setStatus(''); setFormSubmitted(false); }}>
                         Close
                     </Button>
                     <Button variant="primary" onClick={handleClose}>
@@ -184,14 +228,10 @@ export const NavBar = () => {
                         alt=""
                         style={{ 'width': 30 }}
                     />
-                    <strong className="me-auto"> PJSYM
-                        {/* {toastVariant === 'success' ? 'Success' : 'Error'} */}
-                    </strong>
+                    <strong className="me-auto"> PJSYM </strong>
                 </Toast.Header>
                 <Toast.Body>{status.split('\n').map((line, index) => <div key={index}>{line}</div>)}</Toast.Body>
             </Toast>
         </Navbar>
     );
 };
-
-export default NavBar;
