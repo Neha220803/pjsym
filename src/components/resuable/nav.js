@@ -11,6 +11,7 @@ export const NavBar = () => {
     const [lgShow, setLgShow] = useState(false); // State for modal visibility
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [status, setStatus] = useState('');
 
@@ -19,15 +20,16 @@ export const NavBar = () => {
         setLgShow(false);
 
         try {
-            const response = await fetch("http://localhost:5000/!", {
+            const response = await fetch("http://localhost:5000/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    name: name,
-                    phoneNumber: phoneNumber,
-                    message: message
+                    "name": name,
+                    "phoneNumber": phoneNumber,
+                    "message": message,
+                    "email": email
                 })
             });
 
@@ -130,6 +132,16 @@ export const NavBar = () => {
                                     onChange={(e) => setPhoneNumber(e.target.value)}
                                 />
                             </Form.Group>
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+                                <Form.Label>mail id</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Your Email Id"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </Form.Group>
+
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Message</Form.Label>
                                 <Form.Control as="textarea" placeholder="Enter Your Message here..." rows={3}
