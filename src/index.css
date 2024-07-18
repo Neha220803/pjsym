@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,6 +16,49 @@ code {
     monospace;
 }
 
+.inknut-antiqua-light {
+  font-family: "Inknut Antiqua", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.inknut-antiqua-regular {
+  font-family: "Inknut Antiqua", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inknut-antiqua-medium {
+  font-family: "Inknut Antiqua", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inknut-antiqua-semibold {
+  font-family: "Inknut Antiqua", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.inknut-antiqua-bold {
+  font-family: "Inknut Antiqua", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.inknut-antiqua-extrabold {
+  font-family: "Inknut Antiqua", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.inknut-antiqua-black {
+  font-family: "Inknut Antiqua", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
 header {
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('components/images/girlbg.png'); */
   height: 100vh;
@@ -21,25 +67,171 @@ header {
   background-attachment: fixed;
 }
 
+.justify-text {
+  text-align: justify !important;
+}
+
+
 .each-head {
   color: #124076;
-  font-size: 56.56px;
-  font-family: Inknut Antiqua;
+  font-size: 52px;
+  font-family: "Inknut Antiqua";
   font-weight: 700;
   word-wrap: break-word
 }
 
-.each-head2 {
-  color: #487D49;
+.each-subhead {
+  color: #124076;
   font-family: "Inknut Antiqua";
-  font-size: 56.561px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
+.each-head2 {
+  color: #487D49;
+
+  font-family: "Inknut Antiqua";
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.each-subhead2 {
+  color: #487D49;
+  font-family: "Inknut Antiqua";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media screen and (max-width: 1000px) {
+  p {
+    font-size: 20px !important;
+  }
+
+
+}
+
+.quotes-head {
+  color: #487D49;
+  font-family: "Inknut Antiqua";
+  font-size: 25px !important;
+  font-weight: 600 !important;
+
+}
+
+.quotes-headblue {
+  color: #124076;
+  font-family: "Inknut Antiqua";
+  font-size: 25px !important;
+}
+
+
+@media screen and (max-width: 480px) {
+
+  .each-head,
+  .each-head2 {
+    font-size: 32px !important;
+  }
+
+  .each-subhead2,
+  .each-subhead {
+    font-size: 20px !important;
+  }
+
+  .quotes-head,
+  .quotes-headblue {
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 575px) {
+
+  .each-head,
+  .each-head2 {
+    font-size: 36px !important;
+
+  }
+
+  .each-subhead2,
+  .each-subhead {
+    font-size: calc(22px - (576px - 100vw) / 30);
+  }
+
+  .quotes-head,
+  .quotes-headblue {
+    font-size: 20px !important;
+  }
+}
+
+@media screen and (min-width: 575px) and (max-width: 640px) {
+
+  .each-head,
+  .each-head2 {
+    font-size: 40px !important;
+  }
+
+  .each-subhead2,
+  .each-subhead {
+    font-size: 24px !important;
+  }
+
+  .quotes-head,
+  .quotes-headblue {
+    font-size: 20px !important;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 768px) {
+
+  .each-head,
+  .each-head2 {
+    font-size: 44px !important;
+  }
+
+  .each-subhead2,
+  .each-subhead {
+    font-size: 26px !important;
+  }
+
+  .quotes-head,
+  .quotes-headblue {
+    font-size: 24px !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+  .each-head,
+  .each-head2 {
+    font-size: 48px !important;
+  }
+
+  .each-subhead2,
+  .each-subhead {
+    font-size: 30px !important;
+  }
+
+  .quotes-head,
+  .quotes-headblue {
+    font-size: 26px !important;
+  }
+}
+
+
+
+
 .image-container {
   position: relative;
+}
+
+
+p {
+  font-size: 20px !important;
 }
 
 .image-container::before {
@@ -52,46 +244,143 @@ header {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
-
 section {
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
+}
 
+
+.nav-head {
+  color: #124076;
+  font-weight: bold;
+  vertical-align: middle;
+  line-height: 1.8;
 }
 
 .navcont {
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   color: black !important;
+
 }
 
 .navpaths:hover {
-  color: black !important;
-  border-bottom: 2px solid black !important;
+  color: #124076 !important;
+  border-bottom: 2px solid #124076 !important;
+  font-weight: 500 !important;
 }
 
 .navpaths {
-
   color: rgb(96, 96, 96) !important;
-  font-size: 17px !important;
+  font-size: 18px !important;
+  border: none;
+  outline: none;
 }
 
-.heading1 {
-  position: absolute;
-  width: 100vb;
-  top: 65% !important;
-  left: 20% !important;
-  transform: translate(-50%, -50%);
-  color: white;
-}
+@media (max-width: 1200px) and (min-width: 1000px) {
+  .navpaths {
+    font-size: 14px !important;
+  }
 
-@media (min-width: 576px) {
-
-  /* Adjust as needed for your mobile screen size */
-  .heading1 {
-    color: white;
+  .nav-head {
+    font-size: 16px !important;
   }
 }
+
+.navcont button:focus,
+.navcont button:active,
+.navcont button:hover {
+  outline: none;
+}
+
+/* CSS for responsive carousel text */
+
+
+.heading1 {
+  font-family: "Roboto", sans-serif;
+  position: absolute !important;
+  color: white !important;
+  width: 80% !important;
+  top: 65% !important;
+  left: 20% !important;
+  transform: translate(-50%, -50%) !important;
+  text-align: center !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1169px) {
+  .heading1 {
+    font-size: 2.5rem !important;
+    left: 40% !important;
+    transform: translateX(-50%) !important;
+    top: 50% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .heading1 {
+    font-size: 2rem !important;
+    left: 30% !important;
+    transform: translateX(-50%) !important;
+    top: 50% !important;
+  }
+
+  .heading1 h1 {
+    font-size: 1.9rem !important;
+  }
+
+
+
+}
+
+@media (max-width: 761px) {
+  .heading1 {
+    font-size: 1.8rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 50% !important;
+  }
+
+  .heading1 h1 {
+    font-size: 1.6rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .heading1 {
+
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 50% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading1 {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 50% !important;
+  }
+
+  .heading1 h1 {
+    font-size: 1.9rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading1 {
+    width: 80% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 50% !important;
+  }
+
+  .heading1 h1 {
+    font-size: 1.3rem !important;
+  }
+}
+
+
 
 .overlap-group {
   position: relative;
@@ -120,10 +409,19 @@ footer {
 
 .footer-nav {
   list-style-type: none;
+
+}
+
+.footer-navbutton {
+  background-color: #124076;
+  color: white;
+  border: none;
+  outline: none;
 }
 
 .social-links {
   list-style-type: none;
+
 }
 
 
@@ -134,10 +432,7 @@ footer {
 }
 
 
-.footer-nav li a:link,
-.footer-nav li a:visited,
-.social-links li a:link,
-.social-links li a:visited {
+.footer-nav {
   text-decoration: underline;
   text-decoration-color: #FFC374;
   border: 0;
@@ -147,9 +442,10 @@ footer {
 .social-links li a:link,
 .social-links li a:visited {
   font-size: 100%;
+  color: white;
 }
 
-.footer-nav li a:hover,
+.footer-nav:hover,
 .social-links li a:hover {
   color: #ddd;
   text-decoration: none;
@@ -181,6 +477,13 @@ footer {
   flex-direction: column;
 }
 
+
+@media (max-width: 960px) {
+  .modal-90w {
+    max-width: 95vw !important;
+  }
+}
+
 .blue-section {
   display: flex;
   flex-direction: column;
@@ -209,3 +512,5 @@ footer {
   border-radius: 5px;
   color: white !important;
 }
+
+

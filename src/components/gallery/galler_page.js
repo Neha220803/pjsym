@@ -103,7 +103,7 @@ const GalleryPage = () => {
     return (
         <div>
             <img alt="Gallery Background Image" src={gallerybg} className="w-100 vh-50" />
-            <Container>
+            <Container className='px-3'>
                 <motion.div initial="hidden" animate={controls} variants={staggeredVariants} className='each-head d-flex justify-content-center my-4'>Gallery</motion.div>
                 <Row>
                     {galleryData.map((image, index) => (

@@ -3,8 +3,12 @@ import { Navbar, Container, Nav, Button, Modal, Form, Toast } from 'react-bootst
 import { FaEnvelope, FaUser, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import logo from '../images/logo.png';
 import '../../index.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
 export const NavBar = () => {
+    const navigate = useNavigate();
     const [lgShow, setLgShow] = useState(false);
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -14,6 +18,9 @@ export const NavBar = () => {
     const [showToast, setShowToast] = useState(false);
     const [toastVariant, setToastVariant] = useState('success');
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const [expanded, setExpanded] = useState(false); // State to manage Navbar collapse
+
+    const handleNavbarToggle = () => setExpanded(!expanded);
 
     const handleClose = async (event) => {
         event.preventDefault();
@@ -83,33 +90,54 @@ export const NavBar = () => {
         else if (name === 'phoneNumber') setPhoneNumber(value);
         else if (name === 'email') setEmail(value);
         else if (name === 'message') setMessage(value);
-        // Reset form validation state when user starts typing
         setFormSubmitted(false);
     };
     return (
-        <Navbar className="navcont fixed-top" expand="lg">
+        <Navbar className="navcont fixed-top" expand="lg" expanded={expanded}>
             <Container>
                 <Navbar.Brand href="/">
                     <img
                         alt=""
                         src={logo}
-                        width="30"
-                        height="30"
+                        width="40"
+                        height="40"
                         className="d-inline-block align-top"
-                    />{'   '}
-                    PJSYM
+                    />
+                    <span className='ms-3 nav-head d-none d-lg-inline'>PATNA JESUIT SOCIETY YOUTH MINISTRY</span>
+                    <span className='ms-3 nav-head d-lg-none'>PJSYM</span> {/* Display this on small screens */}
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleNavbarToggle} />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                     <Nav>
-                        <Nav.Link href="/" className='navpaths nav-text'>Home</Nav.Link>
-                        <Nav.Link href="/about" className='navpaths'>About Us</Nav.Link>
-                        <Nav.Link href="/programs" className='navpaths'>Programs</Nav.Link>
-                        <Nav.Link href="/heros" className='navpaths'>Heroes</Nav.Link>
-                        <Nav.Link href="/gallery" className='navpaths'>Gallery</Nav.Link>
-                        <Nav.Link href="#!" className='navpaths' onClick={() => setLgShow(true)}>Contact Us</Nav.Link>
+                        {/* <Nav.Link href="/" className='navpaths nav-text'>Home</Nav.Link> */}
+                        {/* <Nav.Link href="/#about" className='navpaths'>About Us</Nav.Link> */}
+                        {/* <Nav.Link href="/#programs" className='navpaths'>Programs</Nav.Link> */}
+                        {/* <Nav.Link href="/#heros" className='navpaths'>Heroes</Nav.Link> */}
+                        {/* <Nav.Link href="/#gallery" className='navpaths'>Gallery</Nav.Link> */}
+                        {/* <Nav.Link href="#!" className='navpaths' onClick={() => setLgShow(true)}>Contact Us</Nav.Link> */}
+                        <button className="btn btn-transparent" onClick={() => { navigate('/'); setExpanded(false); }}>
+                            <div className='navpaths nav-text'>Home</div>
+                        </button>
+                        <button className="btn btn-transparent" ariant='transparent' onClick={() => { navigate('/about'); setExpanded(false); }}>
+                            <div className='navpaths nav-text'>About Us</div>
+                        </button>
+                        <button className="btn btn-transparent" ariant='transparent' onClick={() => { navigate('/programs'); setExpanded(false); }}>
+                            <div className='navpaths nav-text'> Programs</div>
+                        </button>
+                        <button className="btn btn-transparent" ariant='transparent' onClick={() => { navigate('/heros'); setExpanded(false); }}>
+                            <div className='navpaths nav-text'>Heroes</div>
+                        </button>
+                        <button className="btn btn-transparent" ariant='transparent' onClick={() => { navigate('/gallery'); setExpanded(false); }}>
+                            <div className='navpaths nav-text'>Gallery</div>
+                        </button>
+                        <button className="btn btn-transparent" ariant='transparent' onClick={() => setLgShow(true) > navigate('#!')}>
+                            <div className='navpaths nav-text'>Contact Us</div>
+                        </button>
+                        <div className="d-flex align-items-center justify-content-center">
+                            <button onClick={() => { navigate('/donate'); setExpanded(false); }} className="btn btn-primary mx-2 me-lg-0">Donate</button>
+                        </div>
+
                     </Nav>
-                    <Button href='/donate' variant="outline-primary">Donate</Button>
                 </Navbar.Collapse>
             </Container>
 
@@ -131,16 +159,16 @@ export const NavBar = () => {
                             CONTACT INFORMATION
                         </h3>
                         <div className="d-flex align-items-start mb-3">
-                            <FaUser className="me-2" />
-                            <span>Fr. JOYSON FERNANDES SJ</span>
+                            <FaUser className="me-2 mt-1" />
+                            <span>Fr. Anthony Prakash SJ</span>
                         </div>
                         <div className="d-flex align-items-center mb-3">
                             <FaPhone className="me-2" />
                             <span>+91 9871528965 <br></br>+91 9939447576</span>
                         </div>
                         <div className="d-flex align-items-center mb-3">
-                            <FaEnvelope className="me-2" />
-                            <span> pjsympatna@gmail.com</span>
+                            <FaEnvelope className="me-2 mt-1" />
+                            <span>pjsym1975@gmail.com</span>
                         </div>
                         <div className="d-flex align-items-center">
                             <FaMapMarkerAlt className="me-2" />
@@ -240,7 +268,7 @@ export const NavBar = () => {
                     />
                     <strong className="me-auto"> PJSYM </strong>
                 </Toast.Header>
-                <Toast.Body>{status.split('\n').map((line, index) => <div key={index}>{line}</div>)}</Toast.Body>
+                <Toast.Body><strong>{status.split('\n').map((line, index) => <div key={index}>{line}</div>)}</strong></Toast.Body>
             </Toast>
         </Navbar>
     );

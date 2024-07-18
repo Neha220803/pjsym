@@ -7,23 +7,20 @@ const HistoryComp = () => {
   return (
     <Container>
       <div className='each-head mt-4 d-flex justify-content-center'>History</div>
-      <div className='my-4'>
+      <div className='my-4 '>
         <VerticalTimeline lineColor={"black"}>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentArrowStyle={{ borderRight: "7px solid  #124076" }}
+            date="1975 - 1980"
             contentStyle={{ borderTop: "3px solid  #124076" }}
-            date="2019"
+            contentArrowStyle={{ borderRight: "7px solid  #124076" }}
             iconStyle={{ background: "#124076", color: "#fff" }}
           //    icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title">
-              Full-time Vocation Promoter<br></br> Fr. Anthony Prakash SJ
-            </h3>
-            <p>
-              Inherits responsibility for Youth Apostolate.
-            </p>
+            <h3 className="vertical-timeline-element-title">Initial involvement</h3>
+            <p>Involvement of Fr. George Peter SJ, Fr. Irudaya Raj SJ, and Sr. Christine HC in youth ministry.</p>
           </VerticalTimelineElement>
+
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="2012"
@@ -52,14 +49,18 @@ const HistoryComp = () => {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="1975 - 1980"
-            contentStyle={{ borderTop: "3px solid  #124076" }}
             contentArrowStyle={{ borderRight: "7px solid  #124076" }}
+            contentStyle={{ borderTop: "3px solid  #124076" }}
+            date="2019"
             iconStyle={{ background: "#124076", color: "#fff" }}
           //    icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title">Initial involvement</h3>
-            <p>Involvement of Fr. George Peter SJ, Fr. Irudaya Raj SJ, and Sr. Christine HC in youth ministry.</p>
+            <h3 className="vertical-timeline-element-title">
+              Vocation Promoter: Full-time <br></br> Fr. Anthony Prakash SJ
+            </h3>
+            <p>
+              Inherits responsibility for Youth Apostolate.
+            </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
       </div>

@@ -12,19 +12,19 @@ function CarouselHeader() {
     const slides = [
         {
             image: carousel1,
-            heading: ['SAINUMA\'s Symphony', ' From Burden to Beacon'],
+            heading: ['Sainuma\'s Symphony:', 'From Burden to Beacon'],
             buttonText: 'Read More',
             buttonVariant: 'outline-primary'
         },
         {
             image: carousel2,
-            heading: ['Rising from Ashes:', 'The AVINASH MAHATO Story'],
+            heading: ['Avinash Mahato\'s Story:', 'Rising From Ashes'],
             buttonText: 'Read More',
             buttonVariant: 'outline-primary'
         },
         {
             image: carousel3,
-            heading: ['LOVELY KUMARI\'s Journey:', 'From Fragility to Strength'],
+            heading: ['Lovely Kumari\'s Journey:', 'From Fragility to Strength'],
             buttonText: 'Read More',
             buttonVariant: 'outline-primary'
         }
@@ -33,7 +33,7 @@ function CarouselHeader() {
 
     return (
         <header>
-            <Carousel interval={1500} pause={false} controls={false}>
+            <Carousel interval={3000} pause={false} controls={false}>
                 {slides.map((slide, index) => (
                     <Carousel.Item key={index} style={{ overflow: 'hidden' }}>
                         <div className="image-container">
@@ -44,7 +44,7 @@ function CarouselHeader() {
                                 style={{ objectFit: 'cover', height: '100vh' }}
                             />
                         </div>
-                        <Carousel.Caption className="heading1" style={{ top: 0 }}>
+                        <Carousel.Caption className="heading1">
                             {slide.heading.map((line, i) => (
                                 <h1 key={i}>{line}</h1>
                             ))}
